@@ -630,11 +630,11 @@
 				}
 			},
 			{
-				"name": "Send Email On Failure_copy",
+				"name": "Send Email On Success_copy",
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "Failure_copy",
+						"activity": "Success_copy",
 						"dependencyConditions": [
 							"Succeeded"
 						]
