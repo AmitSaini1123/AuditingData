@@ -337,7 +337,7 @@
 				}
 			},
 			{
-				"name": "Employee_Data",
+				"name": "Emp_Data",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -387,7 +387,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Employee_Data",
+						"activity": "Emp_Data",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -406,7 +406,7 @@
 					"storedProcedureParameters": {
 						"CopyActivity_End_Time": {
 							"value": {
-								"value": "@{activity('Employee_Data').output.executionDetails[0].start}\n",
+								"value": "@{activity('Emp_Data').output.executionDetails[0].start}\n",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -427,7 +427,7 @@
 						},
 						"DataRead": {
 							"value": {
-								"value": "@{activity('Employee_Data').output.rowsRead}",
+								"value": "@{activity('Emp_Data').output.rowsRead}",
 								"type": "Expression"
 							},
 							"type": "Int32"
@@ -441,7 +441,7 @@
 						},
 						"Execution_Status": {
 							"value": {
-								"value": "@{activity('Employee_Data').output.executionDetails[0].status}",
+								"value": "@{activity('Emp_Data').output.executionDetails[0].status}",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -455,7 +455,7 @@
 						},
 						"rowsCopied": {
 							"value": {
-								"value": "@{activity('Employee_Data').output.rowsCopied}",
+								"value": "@{activity('Emp_Data').output.rowsCopied}",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -469,7 +469,7 @@
 						},
 						"Source": {
 							"value": {
-								"value": "'Employee_Data'",
+								"value": "'Emp_Data'",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -514,7 +514,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Employee_Data",
+						"activity": "Emp_Data",
 						"dependencyConditions": [
 							"Failed"
 						]
@@ -547,7 +547,7 @@
 						},
 						"ErrorCode": {
 							"value": {
-								"value": "@{activity('Employee_Data').error.errorCode}",
+								"value": "@{activity('Emp_Data').error.errorCode}",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -561,14 +561,14 @@
 						},
 						"ErrorMessage": {
 							"value": {
-								"value": "@{activity('Employee_Data').Error.Message}",
+								"value": "@{activity('Emp_Data').Error.Message}",
 								"type": "Expression"
 							},
 							"type": "String"
 						},
 						"Execution_Status": {
 							"value": {
-								"value": "@{activity('Employee_Data').output.executionDetails[0].status}",
+								"value": "@{activity('Emp_Data').output.executionDetails[0].status}",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -589,7 +589,7 @@
 						},
 						"Source": {
 							"value": {
-								"value": "'Employee_Data'",
+								"value": "'Emp_Data'",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -658,7 +658,7 @@
 						"Content-Type": "application/json "
 					},
 					"body": {
-						"value": "{\n\"EmailTo\": \"@{pipeline().parameters.EmailTo}\",\n\"Pipeline\": \"@{pipeline().Pipeline}\",\n\"SccessMessage\":\"@{activity('Employee_Data').Error.Message}\",\n\"DataFactoryName\":\"@{pipeline().DataFactory}\",\n}",
+						"value": "{\n\"EmailTo\": \"@{pipeline().parameters.EmailTo}\",\n\"Pipeline\": \"@{pipeline().Pipeline}\",\n\"SccessMessage\":\"@{activity('Emp_Data').Error.Message}\",\n\"DataFactoryName\":\"@{pipeline().DataFactory}\",\n}",
 						"type": "Expression"
 					},
 					"datasets": [
