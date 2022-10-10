@@ -383,7 +383,7 @@
 				]
 			},
 			{
-				"name": "Success_copy1",
+				"name": "Success_copy",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
@@ -510,7 +510,7 @@
 				}
 			},
 			{
-				"name": "Failure_copy1",
+				"name": "Failure_copy",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
@@ -630,11 +630,11 @@
 				}
 			},
 			{
-				"name": "Send Email On Failure_copy1",
+				"name": "Send Email On Failure_copy",
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "Failure_copy1",
+						"activity": "Failure_copy",
 						"dependencyConditions": [
 							"Succeeded"
 						]
