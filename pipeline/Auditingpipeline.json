@@ -351,6 +351,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"additionalColumns": [
+							{
+								"name": "LastEmpRecord",
+								"value": ""
+							}
+						],
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -658,7 +664,7 @@
 						"Content-Type": "application/json "
 					},
 					"body": {
-						"value": "{\n\"EmailTo\": \"@{pipeline().parameters.EmailTo}\",\n\"Pipeline\": \"@{pipeline().Pipeline}\",\n\"SccessMessage\":\"@{activity('Emp_Data').Error.Message}\",\n\"DataFactoryName\":\"@{pipeline().DataFactory}\",\n}",
+						"value": "{\n\"EmailTo\": \"@{pipeline().parameters.EmailTo}\",\n\"Pipeline\": \"@{pipeline().Pipeline}\",\n\"SccessMessage\":\"@{pipeline().parameters.Activity}\",\n\"DataFactoryName\":\"@{pipeline().DataFactory}\",\n\n}",
 						"type": "Expression"
 					},
 					"datasets": [
@@ -672,6 +678,9 @@
 		],
 		"parameters": {
 			"EmailTo": {
+				"type": "string"
+			},
+			"Activity": {
 				"type": "string"
 			}
 		},
