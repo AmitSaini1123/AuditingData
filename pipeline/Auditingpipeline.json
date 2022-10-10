@@ -634,7 +634,7 @@
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "Success_copy1",
+						"activity": "Failure_copy1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
