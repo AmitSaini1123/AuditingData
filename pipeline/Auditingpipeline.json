@@ -39,13 +39,7 @@
 				"inputs": [
 					{
 						"referenceName": "Mock_data",
-						"type": "DatasetReference",
-						"parameters": {
-							"DbTable": {
-								"value": "@variables('Mock_data')",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
