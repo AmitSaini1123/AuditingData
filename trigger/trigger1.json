@@ -2,7 +2,7 @@
 	"name": "trigger1",
 	"properties": {
 		"annotations": [
-			"Information Trigger"
+			"Auditing Trigger"
 		],
 		"runtimeState": "Started",
 		"pipelines": [],
