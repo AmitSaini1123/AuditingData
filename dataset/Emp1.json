@@ -1,0 +1,38 @@
+{
+	"name": "Emp1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLinkedServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EMP_first_name",
+				"type": "varchar"
+			},
+			{
+				"name": "EMP_last_name",
+				"type": "varchar"
+			},
+			{
+				"name": "EMP_Deparment",
+				"type": "varchar"
+			},
+			{
+				"name": "EMP_address",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "EMP_DATA1"
+		}
+	}
+}
