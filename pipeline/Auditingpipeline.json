@@ -325,7 +325,7 @@
 						"Content-Type": "application/json "
 					},
 					"body": {
-						"value": "{\n    \"EmailTo\" :\"@{pipeline().parameters.EmailTo}\",\n    \"Status\":\"Failed\",\n    \"DataFactoryName\":\"@{pipeline().DataFactory}\",\n    \"Pipeline\":\"@{pipeline().Pipeline}\",\n    \"ExecuteTime\":\"@{pipeline().TriggerTime}\",\n    \"Runid\":\"@{pipeline().RunId}\",\n    \"ErrorMessage\" :\"@{activity('Mock_data').Error.Message}\"\n    \n}",
+						"value": "{\n    \"EmailTo\" :\"@{pipeline().parameters.EmailTo}\",\n    \"Status\":\"Failed\",\n    \"DataFactoryName\":\"@{pipeline().DataFactory}\",\n    \"Pipeline\":\"@{pipeline().Pipeline}\",\n    \"ExecuteTime\":\"@{pipeline().TriggerTime}\",\n    \"Runid\":\"@{pipeline().RunId}\",\n    \"ErrorMessage\" :\"@{activity('Mock_data').Error.Message}\",\n    \"TriggerId\": \"@{pipeline().TriggerId}\",\n    \"TriggerTime\": \"@{pipeline().TriggerTime}\",\n    \"TriggerType\": \"@{pipeline().TriggerType}\"\n    \n}",
 						"type": "Expression"
 					},
 					"datasets": [
@@ -669,6 +669,26 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Success",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
 			}
 		],
 		"parameters": {
