@@ -1,0 +1,20 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [
+			"Information Trigger"
+		],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 2,
+				"startTime": "2022-10-12T14:22:00",
+				"endTime": "2022-10-13T14:25:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
